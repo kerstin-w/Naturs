@@ -58,6 +58,7 @@ both vertically and horizontally within its parent container. */
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .heading-primary {
@@ -65,6 +66,7 @@ both vertically and horizontally within its parent container. */
   text-transform: uppercase;
 
   backface-visibility: hidden;
+  margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -93,6 +95,65 @@ both vertically and horizontally within its parent container. */
   animation-name: moveInRight;
   animation-duration: 1s;
   animation-timing-function: ease-out;
+}
+
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+/* The `.btn-animated` class is defining an animation for a button element. It uses the `moveInButtom`
+keyframe animation, which moves the button element from a lower position to its original position.
+The animation has a duration of 0.5 seconds and an ease-out timing function. The
+`animation-fill-mode` property is set to `backwards`, which means that the button element will
+retain the styles from the first keyframe of the animation before it starts playing. The animation
+will start after a delay of 0.75 seconds. */
+.btn-animated {
+  animation: moveInButtom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
 }
 
 /*---- ANIMATIONS ----*/
@@ -129,5 +190,17 @@ element from right to left. */
   100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes moveInButtom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
