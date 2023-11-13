@@ -50,17 +50,17 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 
-.logo-box {
+.header__logo-box {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
 
-.logo {
+.header__logo {
   height: 3.5rem;
 }
 
-.text-box {
+.header__text-box {
   position: absolute;
   /* The CSS code `top: 40%; left: 50%; transform: translate(-50%, -50%);` is used to center an element
 both vertically and horizontally within its parent container. */
@@ -78,7 +78,7 @@ both vertically and horizontally within its parent container. */
   margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
   display: block;
   font-size: 6rem;
   font-weight: 400;
@@ -95,7 +95,7 @@ both vertically and horizontally within its parent container. */
   */
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
@@ -146,12 +146,12 @@ both vertically and horizontally within its parent container. */
   opacity: 0;
 }
 
-.btn-white {
+.btn--white {
   background-color: #fff;
   color: #777;
 }
 
-.btn-white::after {
+.btn--white::after {
   background-color: #fff;
 }
 
@@ -161,7 +161,7 @@ The animation has a duration of 0.5 seconds and an ease-out timing function. The
 `animation-fill-mode` property is set to `backwards`, which means that the button element will
 retain the styles from the first keyframe of the animation before it starts playing. The animation
 will start after a delay of 0.75 seconds. */
-.btn-animated {
+.btn--animated {
   animation: moveInButtom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
 }
