@@ -7,6 +7,7 @@ Dark green: #28b485
 
 */
 
+/*---- GENERAL STYLES ----*/
 /* The CSS code `*` selects all elements on the page, and the properties `margin: 0;`, `padding: 0;`,
 and `box-sizing: border-box;` are applied to those elements. */
 * {
@@ -24,6 +25,7 @@ body {
   padding: 30px;
 }
 
+/*---- CLASSES ----*/
 .header {
   height: 95vh;
   background-image: linear-gradient(
@@ -61,6 +63,8 @@ both vertically and horizontally within its parent container. */
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+
+  backface-visibility: hidden;
 }
 
 .heading-primary-main {
@@ -68,6 +72,16 @@ both vertically and horizontally within its parent container. */
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 35px;
+
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+
+  /*
+  animation-delay: 3s;
+  animation-iteration-count: 3;
+  
+  */
 }
 
 .heading-primary-sub {
@@ -75,4 +89,45 @@ both vertically and horizontally within its parent container. */
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 17.4px;
+
+  animation-name: moveInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+/*---- ANIMATIONS ----*/
+/* The `@keyframes` rule is used to define a set of CSS styles that will be applied to an element at
+different points in an animation. In this case, the `moveInLeft` keyframe animation is defined to
+move an element from left to right, and the `moveInRight` keyframe animation is defined to move an
+element from right to left. */
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
