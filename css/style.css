@@ -1,3 +1,5 @@
+/* The `@mixin clearfix` is a Sass mixin that defines a clearfix. A clearfix is a technique used to
+clear floats and ensure that a container properly contains its floated children. */
 /* COLORS */
 /*---- ANIMATIONS ----*/
 /* The `@keyframes` rule is used to define a set of CSS styles that will be applied to an element at
@@ -155,3 +157,35 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center; }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+  background-color: #eee;
+  /* The code `&:not(:last-child) { margin-bottom: -vertical; }` is a SCSS (Sass) selector that
+targets all elements with the class `.row` that are not the last child of their parent element. It
+adds a margin-bottom property with the value of `-vertical` to these elements. This is
+typically used to create spacing between rows in a grid layout. */ }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    background-color: orangered;
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc( 2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc( 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }

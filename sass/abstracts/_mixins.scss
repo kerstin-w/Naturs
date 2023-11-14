@@ -1,0 +1,9 @@
+/* The `@mixin clearfix` is a Sass mixin that defines a clearfix. A clearfix is a technique used to
+clear floats and ensure that a container properly contains its floated children. */
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
