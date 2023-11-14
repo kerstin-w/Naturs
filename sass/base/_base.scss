@@ -1,0 +1,25 @@
+/*---- GENERAL STYLES ----*/
+/* The CSS code is a CSS reset or normalization code. It sets the margin and padding of all elements, as well as
+the box-sizing property, to inherit the value from their parent element. This helps to ensure
+consistent and predictable styling across different browsers and devices by removing any default
+spacing or sizing that may be applied by the browser. */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* The `html { font-size: 62.5%; }` code is setting the base font size for the HTML document to 62.5%.
+This is often used as a technique to make it easier to calculate font sizes using the rem unit. By
+setting the base font size to 62.5%, 1rem will be equal to 10 pixels (since 62.5% of the default
+font size of 16 pixels is 10 pixels). This makes it simpler to work with font sizes in multiples of
+10. */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}

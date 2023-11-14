@@ -1,0 +1,48 @@
+/*---- ANIMATIONS ----*/
+/* The `@keyframes` rule is used to define a set of CSS styles that will be applied to an element at
+different points in an animation. In this case, the `moveInLeft` keyframe animation is defined to
+move an element from left to right, and the `moveInRight` keyframe animation is defined to move an
+element from right to left. */
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInButtom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}

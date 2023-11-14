@@ -1,4 +1,37 @@
 /* COLORS */
+/*---- ANIMATIONS ----*/
+/* The `@keyframes` rule is used to define a set of CSS styles that will be applied to an element at
+different points in an animation. In this case, the `moveInLeft` keyframe animation is defined to
+move an element from left to right, and the `moveInRight` keyframe animation is defined to move an
+element from right to left. */
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInButtom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0rem); } }
+
 /*---- GENERAL STYLES ----*/
 /* The CSS code is a CSS reset or normalization code. It sets the margin and padding of all elements, as well as
 the box-sizing property, to inherit the value from their parent element. This helps to ensure
@@ -11,39 +44,23 @@ spacing or sizing that may be applied by the browser. */
   padding: 0;
   box-sizing: inherit; }
 
+/* The `html { font-size: 62.5%; }` code is setting the base font size for the HTML document to 62.5%.
+This is often used as a technique to make it easier to calculate font sizes using the rem unit. By
+setting the base font size to 62.5%, 1rem will be equal to 10 pixels (since 62.5% of the default
+font size of 16 pixels is 10 pixels). This makes it simpler to work with font sizes in multiples of
+10. */
 html {
   font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }
 
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.7;
   color: #777;
-  padding: 3rem;
-  box-sizing: border-box; }
-
-/*---- Individual ----*/
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-  .header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem; }
-  .header__logo {
-    height: 3.5rem; }
-  .header__text-box {
-    position: absolute;
-    /* The CSS code `top: 40%; left: 50%; transform: translate(-50%, -50%);` is used to center an element
-  both vertically and horizontally within its parent container. */
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center; }
+  padding: 3rem; }
 
 .heading-primary {
   color: #fff;
@@ -59,10 +76,10 @@ body {
     animation-duration: 1s;
     animation-timing-function: ease-out;
     /*
-    animation-delay: 3s;
-    animation-iteration-count: 3;
-    
-    */ }
+        animation-delay: 3s;
+        animation-iteration-count: 3;
+        
+        */ }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
@@ -74,11 +91,11 @@ body {
 
 .btn {
   /* The `.btn-animated` class is defining an animation for a button element. It uses the `moveInButtom`
-    keyframe animation, which moves the button element from a lower position to its original position.
-    The animation has a duration of 0.5 seconds and an ease-out timing function. The
-    `animation-fill-mode` property is set to `backwards`, which means that the button element will
-    retain the styles from the first keyframe of the animation before it starts playing. The animation
-    will start after a delay of 0.75 seconds. */ }
+      keyframe animation, which moves the button element from a lower position to its original position.
+      The animation has a duration of 0.5 seconds and an ease-out timing function. The
+      `animation-fill-mode` property is set to `backwards`, which means that the button element will
+      retain the styles from the first keyframe of the animation before it starts playing. The animation
+      will start after a delay of 0.75 seconds. */ }
   .btn:link, .btn:visited {
     text-decoration: none;
     text-transform: uppercase;
@@ -117,35 +134,24 @@ body {
     animation: moveInButtom 0.5s ease-out 0.75s;
     animation-fill-mode: backwards; }
 
-/*---- ANIMATIONS ----*/
-/* The `@keyframes` rule is used to define a set of CSS styles that will be applied to an element at
-different points in an animation. In this case, the `moveInLeft` keyframe animation is defined to
-move an element from left to right, and the `moveInRight` keyframe animation is defined to move an
-element from right to left. */
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem); }
-  80% {
-    transform: translateX(1rem); }
-  100% {
-    opacity: 1;
-    transform: translateX(0); } }
-
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem); }
-  80% {
-    transform: translateX(-1rem); }
-  100% {
-    opacity: 1;
-    transform: translateX(0); } }
-
-@keyframes moveInButtom {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem); }
-  100% {
-    opacity: 1;
-    transform: translateY(0rem); } }
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    /* The CSS code `top: 40%; left: 50%; transform: translate(-50%, -50%);` is used to center an element
+    both vertically and horizontally within its parent container. */
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
