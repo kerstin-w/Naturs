@@ -1,7 +1,6 @@
 .row {
   max-width: $grid-width;
   margin: 0 auto;
-  background-color: #eee;
 
   /* The code `&:not(:last-child) { margin-bottom: -vertical; }` is a SCSS (Sass) selector that
 targets all elements with the class `.row` that are not the last child of their parent element. It
@@ -13,7 +12,6 @@ typically used to create spacing between rows in a grid layout. */
   @include clearfix;
 
   [class^="col-"] {
-    background-color: orangered;
     float: left;
 
     &:not(:last-child) {
