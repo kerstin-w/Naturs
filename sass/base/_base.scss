@@ -17,9 +17,26 @@ setting the base font size to 62.5%, 1rem will be equal to 10 pixels (since 62.5
 font size of 16 pixels is 10 pixels). This makes it simpler to work with font sizes in multiples of
 10. */
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; //1rem = 10px, 10px/16px = 62.5%
+
+  @include respond(tab-land) {
+    font-size: 56.25%; //1rem = 9px, 9px/16px = 56.25%
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; //1 rem = 8px, 8px/16px = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; //1 rem = 12, 12/16 = 75%
+  }
 }
 
 body {
   box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }

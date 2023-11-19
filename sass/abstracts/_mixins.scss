@@ -8,9 +8,45 @@ clear floats and ensure that a container properly contains its floated children.
   }
 }
 
+/* The `@mixin center` is a Sass mixin that defines a set of CSS properties to center an element both
+horizontally and vertically within its parent container. It sets the position of the element to
+absolute, sets the top and left properties to 50% to position the element in the center of the
+container, and uses the `transform` property with the `translate` function to move the element back
+by 50% of its own width and height, effectively centering it. */
 @mixin center {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px: Phone
+600px - 900px: Tablet portrait
+900xp - 1200px: Tablet landscape
+1200px - 1800px: normal styles apply
+1800px + : Big desktop
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  }
 }
