@@ -10,6 +10,16 @@
   visibility: hidden;
   transition: all 0.3s;
 
+  /* The `@supports` rule is a CSS feature query that checks if a particular CSS property or value is
+supported by the browser. In this case, it is checking if the `backdrop-filter` property with a
+value of `blur(10px)` is supported. */
+  @supports (-webkit-backdrop-filter: blur(10px)) or
+    (backdrop-filter: blur(10px)) {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba($color-black, 0.3);
+  }
+
   &__content {
     @include center;
     width: 75%;
